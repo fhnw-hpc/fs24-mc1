@@ -4,7 +4,7 @@
 
 You design a micro service based application, which has multiple producers of data, as well as multiple different consumers of the data. To do this, you want to use the [Apache Kafka - Data Streaming Platform](https://kafka.apache.org/) in a first step. In a second step it will use a different communication pattern (and/or framework). The application runs distributed in different Docker containers. Define what kind of data your application has and what problem they want to solve with it. Describe the initial situation and the problem to be solved. Then implement your methods according to the tasks below. Write a short report and answer the questions of each of the 4 parts bellow. Include measurements/plots where meaningful.
 
-[Use GitHubClassroom to work on this mini challenge](https://classroom.github.com/a/GJKnhHY_) *TODO*
+[Use GitHubClassroom to work on this mini challenge](https://classroom.github.com/a/18HqjioC)
 
 ### Intro to Kafka using Docker containers
 
