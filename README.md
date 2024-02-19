@@ -22,18 +22,20 @@ You design a micro service based application, which has multiple producers of da
 
 ### Part 1: Kafka Cluster and Application Setup
 
-*TODO: Add more restructiosnto the design (maybe add a small image). Min 2 producers sending to kafka. Min 1 client which storing data to disk and also reignest data to kafka as producer (does not count to the 2 init producers). Min 2 clients processing data (and store it also on disk) from the origin producers and also the enriched data of Client1. (like a chain P1 -> C1 -> C2).*
+*TODO: Add more restrictions to the design (maybe add a small image). Min 2 producers sending to kafka. Min 1 client which storing data to disk and also re-ingest data to kafka as producer (does not count to the 2 init producers). Min 2 clients processing data (and store it also on disk) from the origin producers and also the enriched data of Client1. (like a chain P1 -> C1 -> C2).*
 
 *TODO rewrite that stuff down here accordingly.*
 
-1. Write two different data generator functions, which regularly send messages containing data. One generator should send messages at least every second (1Hz). Choose yourself which data is sent. The application of the data can be chosen freely, but choose a good mixture of a simple and a complex message. The data should be variable. The data generator can send simulated data or real data. Use suitable Kafka components and meaningful names of functions, variables etc. for the implementation. 
+1. Write at least two different data generator functions, which regularly send messages containing data. One generator should send messages at least every second (1Hz). Choose yourself which data is sent. The application of the data can be chosen freely, but choose a good mixture of a simple and a complex message. The data should be variable. The data generator can send simulated data or real data. Use suitable Kafka components and meaningful names of functions, variables etc. for the implementation. 
 
     Tips:
-    * Use several notebooks such that you can start and stop the endless loops of data processing individually.
+    * Use several notebooks so that you can start and stop the endless loops of data processing individually.
     * Use python programs rather than notebooks to automatically start the producers/consumers within their own containers.
-    * After testing, stop the endless loop again otherwise your computer resources are unnecessarily occupied or at the limit.
+    * After testing, stop the endless loop again, otherwise your computer resources are unnecessarily occupied or at the limit.
 
-2. Write a data processor and a data sink. The data processor should regularly read and process the data from the data generators. E.g., a calculation or a machine learning application on the retrieved data; a data enrichment; or the extraction of information from the message. Then the processor sends the data to a data sink. In the data sink the data is stored, e.g. in a CSV file. Use appropriate Kafka components and meaningful names of functions, variables, etc. for the implementation. 
+2. Write at least one data consumer that regularly reads and processes the data from the generators and re-inserts the processed data into the Kafka cluster, e.g., a calculation or a machine learning application on the retrieved data; a data enrichment; or the extraction or enrichment of information based on the message. Also, write at least two data sinks which process the retrieved data and store it to the disk, e.g. in a CSV file. Use appropriate Kafka components and meaningful names of functions, variables, etc. for the implementation. The image below shows a schematic overview over the basic implementation requirements.
+
+![Kafka Base Schema](images/kafka-base-schema.png)
 
 3. Draw an overview of your application components including interfaces and data flows, for example using a component diagram. Answer the following questions and interpret your experiments or results: 
     
@@ -45,7 +47,7 @@ You design a micro service based application, which has multiple producers of da
       * Describe the Docker setup of your application.
 
 #### Bonus 1
-Use a more efficient serializers/deserializers than JSON for the messages.
+Use more efficient serializers/deserializers than JSON for the messages.
 
 
 ### Part 2: Performance Analysis and Evaluation of Kafka
