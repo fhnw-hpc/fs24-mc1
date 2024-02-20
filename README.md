@@ -88,17 +88,19 @@ Make more than 2 DeepDives.
 
 *TODO: Rewrite this, so it is more free text and the stdents write some nice small text and images about their new design and not only answer the questions.*
 
-1. Rewrite your application of part 1 using another communication pattern. You can also use another communication framework, such as RabbitMQ and/or another underlying messaging protocol such as MQTT.
+1. Rewrite your application of part 1 using another communication framework such as RabbitMQ and/or another underlying messaging protocol such as ZeroMQ or MQTT.
     
 2. Pack your rewritten application into containers.
 
 3. Answer the following questions and interpret your experiments or results: 
-      * Which communication pattern is used by Kafka?
-      * What is the difference compared to your chosen pattern?
-      * What are the advantages and disadvantages of these patterns? 
-      * How can you scale the two different approaches? What are ? Why? What are challenges to be considered?
-      * What other 2-3 topologies/patterns do you know used for data processing? Describe the differences and use cases with at least one additional topology. 
-      * Which pattern suits your chosen application best?
+      * Compare the communication patterns of Kafka and your chosen technology. Where are they similar, where different? How do those patterns work? Are there advantages or disadvantages of those patterns? 
+      * Are there any known issues with those patterns? If yes, how could those issues be mitigated or on the other hand provoked? If possible, show this with an experiment.
+      * How scalable are those two approaches? What challenges need to be considered? 
+
+Todo: What to do with those two bullet points? Can they be integrated into 3 somehow?
+
+* *What other 2-3 topologies/patterns do you know used for data processing? Describe the differences and use cases with at least one additional topology.* 
+* *Which pattern suits your chosen application best?*
 
 #### Bonus 3
 Show how your container setup could be integrated into a container orchestration system (such as Kubernets) and how it would profit from this. Or show how you could replace some of the components with cloud-based offers and what changes/considerations come with this.
@@ -113,7 +115,7 @@ Profile your producers and consumers/data sinks. Describe the patterns and bottl
   Some example experiments:
   
   * Measure the average time incl. standard deviation required by your producer/consumer loop over several runs.
-  * Determine which call of your producer/consumer takes the most time. Which 3 methods are called the most or needed the most time and how much time?
+  * Determine which call of your producer/consumer takes the most time. Which 3 methods are called the most or need the most time and how much time?
   * Create a profile of your producer/consumer code in a xxxxx.prof file and create 1-2 visualizations of the profile (e.g. with [SnakeViz](https://jiffyclub.github.io/snakeviz/)).
 
 #### Bonus 4
@@ -128,7 +130,7 @@ What would you do differently in the future? What would you change in the assign
 
 ### Further Resources
 
-*TODO: Check if these are still valid or if there are new URLs/tutorials*
+*TODO: Check if these are still valid (Checked 20.2. MS - They are still valid) or if there are new URLs/tutorials*
 
 * Kafka crash course: https://youtu.be/R873BlNVUB4
 * Getting started with Kafka: https://towardsdatascience.com/getting-started-with-apache-kafka-in-python-604b3250aa05
